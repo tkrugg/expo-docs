@@ -8,8 +8,6 @@ An Apple Developer account is needed to build an iOS standalone app, but a Googl
 
 It's a good idea to read the best practices about [Deploying to App Stores](./app-stores.html) to ensure your app is in good shape to get accepted into the Apple and Google marketplaces. We can generate builds for you, but it's up to you to make your app awesome.
 
-> **Warning:** Standalone apps are currently in beta!
-
 ## 1. Install exp
 
 XDE currently doesn't include an option for building a standalone app, so we'll need `exp` for this. Run `npm install -g exp` to get it.
@@ -46,6 +44,11 @@ There are other options you might want to add to `app.json`. We have only covere
 
 
 ## 3. Start the build
+
+> Note for windows users, make sure you have WSL enabled. We recommend
+> picking Ubuntu from the Windows Store, be sure to Launch Ubuntu at
+> least once. Once you have that done, run 
+> in an Admin powershell: `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux`
 
 -   Run `exp start` in your app directory to boot up the Expo packager. This is necessary because during the build process your app will be republished to ensure it is the latest version.
 -   Once the app has started, run `exp build:android` or `exp build:ios`.

@@ -36,6 +36,13 @@ Gets the user agent string which would be included in requests sent by a web vie
 
 - `ios`
 
+  - `buildNumber`
+
+    The build number specified in the embedded `Info.plist` value for `CFBundleVersion` in this app.
+    In a standalone app, you can set this with the `ios.buildNumber` value in `app.json`. This
+    may differ from the value in `Expo.Constants.manifest.ios.buildNumber` because the manifest
+    can be updated over the air, whereas this value will never change for a given native binary.
+
   - `platform`
 
     The Apple internal model identifier for this device, e.g. `iPhone1,1`.
@@ -51,6 +58,12 @@ Gets the user agent string which would be included in requests sent by a web vie
   -  `systemVersion`
 
     The version of iOS running on this device, e.g. `10.3`.
+
+- `android`
+
+  - `versionCode`
+
+    The version code set by `android.versionCode` in app.json.
 
 ### `Expo.Constants.sessionId`
 
@@ -71,7 +84,3 @@ The [manifest](../guides/how-expo-works.html#expo-manifest) object for the app.
 ### `Expo.Constants.linkingUri`
 
 When an app is opened due to a deep link, the prefix of the URI without the deep link part. This value depends on `Expo.Constants.appOwnership`: it may be different if your app is running standalone vs. in the Expo client.
-
-### `Expo.Constants.androidVersionCode`
-
-_Android only_. Returns the version code set by `android.versionCode` in app.json.
